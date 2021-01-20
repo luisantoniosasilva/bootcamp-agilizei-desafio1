@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-01-20T00:23:11.037Z",
+    "end": "2021-01-20T00:23:31.708Z",
+    "duration": 20671,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b62a7916-f369-4e3d-9644-fa9030844534",
+      "title": "",
+      "fullFile": "cypress/integration/cadastro.spec.js",
+      "file": "cypress/integration/cadastro.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "32620a80-d43c-4b8d-9bbb-936fcbd1b0a2",
+          "title": "Cadastro de usuário",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cadastro de um novo usuário",
+              "fullTitle": "Cadastro de usuário Cadastro de um novo usuário",
+              "timedOut": null,
+              "duration": 20542,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('.login').click();\nvar chance_email = chance.email();\ncy.get('#email_create').type(chance_email);\ncy.get('#SubmitCreate').click();\ncy.get('#id_gender1').check();\ncy.get('#customer_firstname').type(chance.first());\ncy.get('#customer_lastname').type(chance.last());\ncy.get('#email').should('have.value', chance_email);\ncy.get('#passwd').type(chance.string({\n  length: 5\n}));\ncy.get('#days').select('10');\ncy.get('#months').select(chance.month());\ncy.get('#years').select(chance.year({\n  min: 1990,\n  max: 1995\n}));\ncy.get('#customer_firstname').type(chance.first());\ncy.get('#customer_lastname').type(chance.last());\ncy.get('#address1').type(chance.address());\ncy.get('#city').type(chance.city());\ncy.get('#id_country').select('21');\ncy.get('#id_state').select('1').should('contain.text', 'Alabama');\ncy.get('#postcode').type(chance.zip());\ncy.get('#phone_mobile').type(chance.phone());\ncy.get('#alias').type(chance_email);\ncy.get('#submitAccount').click();\ncy.url().should('contain', 'my-account');\ncy.get('.info-account').should('contain.text', 'Welcome to your account');",
+              "err": {},
+              "uuid": "4d42885b-307f-4845-bb7a-079354708fa1",
+              "parentUUID": "32620a80-d43c-4b8d-9bbb-936fcbd1b0a2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4d42885b-307f-4845-bb7a-079354708fa1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 20542,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
