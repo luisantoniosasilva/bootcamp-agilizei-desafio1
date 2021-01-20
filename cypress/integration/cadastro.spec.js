@@ -10,6 +10,7 @@ describe('Cadastro de usuário', () => {
         var chance_email = chance.email()
         cy.get('#email_create').type(chance_email)
         cy.get('#SubmitCreate').click()
+
         cy.get('#id_gender1').check()
         cy.get('#customer_firstname').type(chance.first())
         cy.get('#customer_lastname').type(chance.last())
@@ -19,8 +20,6 @@ describe('Cadastro de usuário', () => {
         cy.get('#months').select(chance.month())
         cy.get('#years').select(chance.year({min: 1990, max: 1995}))
 
-        cy.get('#customer_firstname').type(chance.first())
-        cy.get('#customer_lastname').type(chance.last())
         cy.get('#address1').type(chance.address())
         cy.get('#city').type(chance.city())
         cy.get('#id_country').select('21')
@@ -29,6 +28,7 @@ describe('Cadastro de usuário', () => {
             .should('contain.text', 'Alabama')
         cy.get('#postcode').type(chance.zip())
         cy.get('#phone_mobile').type(chance.phone())
+        cy.get('#alias').type(chance_email).clear()
         cy.get('#alias').type(chance_email)
 
         cy.get('#submitAccount').click();
