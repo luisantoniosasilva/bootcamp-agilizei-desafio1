@@ -12,6 +12,7 @@ https://luisantoniosasilva.github.io/bootcamp-agilizei-desafio1/
  - [Cypress 4.10.0](https://www.cypress.io)
 
 ## Dependências
+
 ### Para geração do relatório
  - [cypress-multi-reporters 1.4.0](https://www.npmjs.com/package/cypress-multi-reporters)
  - [mocha 8.2.1](https://www.npmjs.com/package/mocha)
